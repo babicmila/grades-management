@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class GradeController {
@@ -14,17 +15,30 @@ public class GradeController {
     List<Grade> gradeslist = new ArrayList<>();
 
     @GetMapping("/")
-    public String gradeForm(Model model) {
+    public String gradeForm(Model model, @RequestParam(required = false) String id) {
 
-        model.addAttribute("grade", new Grade());
+        Grade grade;
+
+        if (getGradeIndex(id) == -1) {
+            grade = new Grade();
+        } else {
+            grade = gradeslist.get(getGradeIndex(id));
+        }
+        model.addAttribute("grade", grade);
 
         return "form";
     }
 
     @PostMapping("/handleSubmit")
     public String submitForm(Grade grade) {
-        
-        gradeslist.add(grade);
+
+        int index = getGradeIndex(grade.getId());
+
+        if (index == -1) {
+            gradeslist.add(grade);
+        } else {
+            gradeslist.set(index, grade);
+        }
         return "redirect:/grades";
     }
 
@@ -36,4 +50,11 @@ public class GradeController {
         return "grades";
     }
 
+    public Integer getGradeIndex(String id) {
+        for (int i = 0; i < gradeslist.size(); i++) {
+            if (gradeslist.get(i).getId().equals(id))
+                return i;
+        }
+        return -1;
+    }
 }

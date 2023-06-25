@@ -1,18 +1,30 @@
 package com.babicmila.grades;
 
+import java.util.UUID;
+
 public class Grade {
 
+    private String id;
     private String name;
     private String subject;
     private String score;
 
     public Grade() {
+        this.id = UUID.randomUUID().toString();
     }
 
     public Grade(String name, String subject, String score) {
         this.name = name;
         this.subject = subject;
         this.score = score;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -37,15 +49,6 @@ public class Grade {
 
     public void setScore(String score) {
         this.score = score;
-    }
-
-    @Override
-    public String toString() {
-        return "{" +
-                " name='" + getName() + "'" +
-                ", subject='" + getSubject() + "'" +
-                ", score='" + getScore() + "'" +
-                "}";
     }
 
 }
