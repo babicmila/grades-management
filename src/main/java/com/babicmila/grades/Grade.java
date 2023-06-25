@@ -1,7 +1,7 @@
-package com.babicmila;
+package com.babicmila.grades;
 
 public class Grade {
-    
+
     private String name;
     private String subject;
     private String score;
@@ -37,6 +37,15 @@ public class Grade {
 
     public void setScore(String score) {
         this.score = score;
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+                " name='" + getName() + "'" +
+                ", subject='" + getSubject() + "'" +
+                ", score='" + getScore() + "'" +
+                "}";
     }
 
 }
