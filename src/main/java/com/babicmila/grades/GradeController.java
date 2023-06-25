@@ -18,11 +18,12 @@ public class GradeController {
     public String gradeForm(Model model, @RequestParam(required = false) String id) {
 
         Grade grade;
+        int index = getGradeIndex(id);
 
-        if (getGradeIndex(id) == -1) {
+        if (index == -1) {
             grade = new Grade();
         } else {
-            grade = gradeslist.get(getGradeIndex(id));
+            grade = gradeslist.get(index);
         }
         model.addAttribute("grade", grade);
 
