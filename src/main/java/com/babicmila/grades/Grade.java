@@ -2,11 +2,18 @@ package com.babicmila.grades;
 
 import java.util.UUID;
 
+import jakarta.validation.constraints.NotBlank;
+
 public class Grade {
 
     private String id;
+
+    @NotBlank(message = "Name cannot be blank")
     private String name;
+
+    @NotBlank(message = "Subject cannot be blank")
     private String subject;
+
     private String score;
 
     public Grade() {
