@@ -3,12 +3,12 @@ package com.babicmila.grades.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import com.babicmila.grades.Grade;
 import com.babicmila.grades.repository.GradeRepository;
 
-@Component
+@Service
 public class GradeService {
 
     @Autowired

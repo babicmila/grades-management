@@ -3,11 +3,11 @@ package com.babicmila.grades.repository;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import com.babicmila.grades.Grade;
 
-@Component
+@Repository
 public class GradeRepository {
 
     private List<Grade> gradeslist = new ArrayList<>();
