@@ -1,5 +1,6 @@
 package com.babicmila.grades.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -8,7 +9,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.babicmila.grades.Grade;
-import com.babicmila.grades.repository.GradeRepository;
 import com.babicmila.grades.service.GradeService;
 
 import jakarta.validation.Valid;
@@ -16,7 +16,8 @@ import jakarta.validation.Valid;
 @Controller
 public class GradeController {
 
-    GradeService gradeService = new GradeService();
+    @Autowired
+    GradeService gradeService;
 
     @GetMapping("/")
     public String gradeForm(Model model, @RequestParam(required = false) String id) {

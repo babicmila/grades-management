@@ -2,12 +2,17 @@ package com.babicmila.grades.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import com.babicmila.grades.Grade;
 import com.babicmila.grades.repository.GradeRepository;
 
+@Component
 public class GradeService {
 
-    GradeRepository gradeRepository = new GradeRepository();
+    @Autowired
+    GradeRepository gradeRepository;
 
     public Grade getGrade(int index) {
         return gradeRepository.getGrade(index);
