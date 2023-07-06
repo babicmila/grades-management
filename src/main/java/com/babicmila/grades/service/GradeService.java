@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.babicmila.grades.Grade;
+import com.babicmila.grades.pojo.Grade;
 import com.babicmila.grades.repository.GradeRepository;
 
 @Service
@@ -34,7 +34,7 @@ public class GradeService {
 
         int size = getAllGrades().size();
         for (int i = 0; i < size; i++) {
-            if (getAllGrades().get(i).getId().equals(id))
+            if (getGrade(i).getId().equals(id))
                 return i;
         }
         return -1;
