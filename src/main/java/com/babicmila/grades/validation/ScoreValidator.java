@@ -1,4 +1,4 @@
-package com.babicmila.grades;
+package com.babicmila.grades.validation;
 
 import java.util.Arrays;
 import java.util.List;

@@ -2,7 +2,7 @@ package com.babicmila.grades.pojo;
 
 import java.util.UUID;
 
-import com.babicmila.grades.Score;
+import com.babicmila.grades.validation.Score;
 
 import jakarta.validation.constraints.NotBlank;
 

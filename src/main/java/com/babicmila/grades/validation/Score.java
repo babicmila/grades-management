@@ -1,4 +1,4 @@
-package com.babicmila.grades;
+package com.babicmila.grades.validation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
