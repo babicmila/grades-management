@@ -14,7 +14,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import com.babicmila.grades.pojo.Grade;
+import com.babicmila.grades.entity.Grade;
 import com.babicmila.grades.repository.GradeRepository;
 import com.babicmila.grades.service.GradeService;
 

@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import com.babicmila.grades.pojo.Grade;
+import com.babicmila.grades.entity.Grade;
 
 @Repository
 public class GradeRepository {

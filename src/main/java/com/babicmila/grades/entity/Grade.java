@@ -1,4 +1,4 @@
-package com.babicmila.grades.pojo;
+package com.babicmila.grades.entity;
 
 import java.util.UUID;
 
